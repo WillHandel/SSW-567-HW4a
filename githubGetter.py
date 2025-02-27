@@ -16,4 +16,4 @@ def getGithubInfo(githubUser):
     pass
 
 
-print(getGithubInfo("WillHandel"))
+print("Test from within githubGetter.py: ",getGithubInfo("WillHandel"))
