@@ -21,7 +21,7 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  testGithubGetter1:
+  testGithubGetter:
     docker:
       - image: python:3.8
     steps:
@@ -32,17 +32,6 @@ jobs:
       - run:
           name: "Run test"
           command: "python -c 'from githubGetter import getGithubInfo; print(getGithubInfo(\"WillHandel\"))'"
-  testGithubGetter2:
-    docker:
-      - image: python:3.8
-    steps:
-      - checkout
-      - run:
-          name: "Install requests"
-          command: "pip install requests"
-      - run:
-          name: "Run test"
-          command: "python -c 'from githubGetter import getGithubInfo; print(getGithubInfo(\"HillWandel\"))'"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
@@ -50,5 +39,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - say-hello
-      - testGithubGetter1
-      - testGithubGetter2
+      - testGithubGetter
