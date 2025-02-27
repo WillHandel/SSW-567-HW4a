@@ -28,7 +28,7 @@ jobs:
       - checkout
       - run:
           name: "Install requests"
-          command: "install requests"
+          command: "pip install requests"
       - run:
           name: "Run test"
           command: "python -c 'from githubGetter import getGithubInfo; print(getGithubInfo(\"WillHandel\"))'"
