@@ -23,7 +23,7 @@ jobs:
           command: "echo Hello, World!"
   testGithubGetter:
     docker:
-      - image: cimg/base:current
+      - image: python:3.8
     steps:
       - checkout
       - run:
