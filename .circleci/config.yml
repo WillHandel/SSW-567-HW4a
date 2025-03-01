@@ -31,7 +31,7 @@ jobs:
           command: "pip install requests"
       - run:
           name: "Run test"
-          command: "python -c 'from githubGetter import getGithubInfo; print(getGithubInfo(\"WillHandel\"))'"
+          command: "python -m unittest discover -s . -p 'test_githubGetter.py'"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
